@@ -26,6 +26,7 @@ use pocketmine\block\BlockIdentifier;
 use pocketmine\block\BlockTypeInfo;
 use pocketmine\block\Leaves as VanillaLeaves;
 use pocketmine\block\utils\TreeType;
+use pocketmine\event\block\LeavesDecayEvent;
 use pocketmine\network\mcpe\protocol\SpawnParticleEffectPacket;
 
 class Leaves extends VanillaLeaves {
@@ -41,6 +42,20 @@ class Leaves extends VanillaLeaves {
 			$packet->particleName = "minecraft:leaf";
 			$world = $this->position->getWorld();
 			$world->broadcastPacketToViewers($this->position, $packet);
+			return;
+		}
+
+		if(!$this->noDecay && $this->checkDecay) {
+			$ev = new LeavesDecayEvent($this);
+			$ev->call();
+			$world = $this->position->getWorld();
+			if($ev->isCancelled() || $this->findLog($this->position)) {
+				$this->checkDecay = false;
+				$world->setBlock($this->position, $this, false);
+			}
+			else {
+				$world->useBreakOn($this->position);
+			}
 		}
 	}
 }
