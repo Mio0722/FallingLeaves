@@ -1,2 +1,2 @@
 # FallingLeaves
-🍃 A realistic ambience PocketMine plugin that makes leaves flutter
+🍃 A PocketMine plugin for realistic ambience that makes leaves flutter
