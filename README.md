@@ -1,2 +1,27 @@
-# FallingLeaves
-🍃 A PocketMine plugin for realistic ambience that makes leaves flutter
+# 🍃 FallingLeaves
+A PocketMine-MP plugin that implements falling leaves
+
+# 🔧 Features
+- [x] Falling leaf particles
+- [ ] Interaction with fluids
+- [ ] Color difference according to biome
+- [ ] Individual particle design by tree type
+
+#  💡 License
+```
+FallingLeaves: Makes leaves fall from trees of the world
+Copyright (C) 2023 Mio0722
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```
